@@ -1,0 +1,24 @@
+cc_library_shared {
+    name: "libboost_exception",
+    export_include_dirs: ["include"],
+    vendor_available: true,
+    srcs: [
+        "src/clone_current_exception_non_intrusive.cpp",
+    ],
+    header_libs: [
+    ],
+    target: {
+        android: {
+            cflags: [
+                "-fPIC",
+                "-DPIC",
+            ],
+        },
+        not_windows: {
+            cflags: [
+                "-fPIC",
+                "-DPIC",
+            ],
+        },
+    },
+}
