@@ -6,18 +6,21 @@ cc_library_shared {
         "src/clone_current_exception_non_intrusive.cpp",
     ],
     header_libs: [
+        "libboost_config",
     ],
     target: {
         android: {
             cflags: [
                 "-fPIC",
                 "-DPIC",
+                "-fexceptions",
             ],
         },
         not_windows: {
             cflags: [
                 "-fPIC",
                 "-DPIC",
+                "-fexceptions",
             ],
         },
     },
